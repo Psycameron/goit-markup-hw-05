@@ -7,6 +7,7 @@
 /* задник темный #2F303A; */
 /* задник серый #F5F4FA; */
 /* иконки в футере rgba(255, 255, 255, 0.1); */
+/* bgc для work rgba(47, 48, 58, 0.8) */
 
 :root {
   --primary-text-color: #757575;
@@ -19,6 +20,7 @@
   --transparent-white: rgba(255, 255, 255, 0.6);
   --clients-color: #afb1b8;
   --footer-icon-color: rgba(255, 255, 255, 0.1);
+  --bgc-work-li: rgba(47, 48, 58, 0.8);
 }
 
 /* Body */
@@ -132,8 +134,25 @@ p {
   text-decoration: none;
 }
 
+.site-nav>.item {
+  position: relative;
+}
+
 .site-nav .link.current {
   color: var(--accent-text-color);
+}
+
+.site-nav .link.current::after {
+  position: absolute;
+  bottom: -1px;
+  
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+
+  background-color: var(--accent-text-color);
+  border-radius: 2px;
 }
 
 .site-nav .link:hover,
@@ -275,6 +294,32 @@ p {
 
 .work-list .image {
   display: block;
+}
+
+.work-box {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  
+  width: 100%;
+  height: 70px;
+
+  background-color: var(--bgc-work-li);
+}
+
+.work-subtitle {
+  padding: 27px 0;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--wtite-color);
+}
+
+.work-item {
+  position: relative;
 }
 
 /* Team  */
